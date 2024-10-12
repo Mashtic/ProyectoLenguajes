@@ -1,5 +1,6 @@
 # ninja log v6
-15	83	7504705500609313	CMakeFiles/untitled.dir/verificacion.c.obj	1272af2b84980eb7
-2	111	7504705500478650	CMakeFiles/untitled.dir/main.c.obj	ecdde167c3e3abd8
-9	120	7504705500546881	CMakeFiles/untitled.dir/matriz.c.obj	9e40358398d4001
-120	244	7504705501653903	untitled.exe	86ba1dfd57258ecf
+20	92	7504718407255282	CMakeFiles/untitled.dir/verificacion.c.obj	7edba93d89ebed16
+4	102	7504753734625494	CMakeFiles/untitled.dir/matriz.c.obj	d0521422d9049968
+5	89	7504754120005036	CMakeFiles/untitled.dir/main.c.obj	337f1c9758afe87
+90	236	7504754120853916	untitled.exe	86ba1dfd57258ecf
+10	231	7504754379394230	build.ninja	28fd58c8c2711ce
