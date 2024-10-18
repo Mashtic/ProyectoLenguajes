@@ -2,27 +2,41 @@
 #include "matriz.h"
 
 int main() {
-    int array[] = {0, 1, 2, 3, 4, 5};
-    int arrayComplemento[]= {1, 0, 3, 2, 5, 4};
-    int matrizCruz[6][6];
-    int matrizEstrella[6][6];
+    int array[] = {0, 1, 2, 3, 4, 5};                 // Elementos del conjunto
+    int arrayComplemento[] = {1, 0, 3, 2, 5, 4};      // Complementos de cada elemento
 
-    inicializarMatriz(matrizCruz);  // Inicializa la matriz con -1
-    inicializarMatriz(matrizEstrella);  // Inicializa la matriz con -1
+    int matrizCruz[N][N];     // Matriz para la operación '+'
+    int matrizEstrella[N][N]; // Matriz para la operación '*'
 
-    llenarMatrizCruz(matrizCruz, array, arrayComplemento); // Llenar matriz con propiedades 1, 3 y 4
-    printf("Matriz cruz resultante:\n");
-    imprimirMatriz(matrizCruz);      // Imprimir la matriz generada
-    llenarMatrizEstrella(matrizEstrella, array, arrayComplemento); // Llenar matriz con propiedades 1, 3 y 4
-    printf("Matriz estrella resultante:\n");
+    // Inicializar y llenar las matrices con las propiedades conocidas
+    inicializarMatriz(matrizCruz);
+    inicializarMatriz(matrizEstrella);
+    llenarMatrizCruz(matrizCruz, array, arrayComplemento);
+    llenarMatrizEstrella(matrizEstrella, array, arrayComplemento);
+
+    // Mostrar las matrices iniciales
+    printf("Matriz inicial para la operación '+' (suma):\n");
+    imprimirMatriz(matrizCruz);
+
+    printf("Matriz inicial para la operación '*' (producto):\n");
     imprimirMatriz(matrizEstrella);
 
-    // llenarPropiedad2(matrizCruz);    // Llenar con propiedad 2 y simetría
-    // llenarPropiedad2(matrizEstrella);    // Llenar con propiedad 2 y simetría
+    // Pausa antes de continuar
+    printf("Presione Enter para continuar con la búsqueda...\n");
+    getchar();
 
-    // printf("Matriz resultante:\n");
-    // imprimirMatriz(matrizCruz);      // Imprimir la matriz generada
-    // imprimirMatriz(matrizEstrella);      // Imprimir la matriz generada
+    // Iniciar búsqueda de solución
+    printf("Buscando solución que satisfaga todas las propiedades...\n");
+    if (buscarSolucion(matrizCruz, matrizEstrella, 1, 0)) {
+        printf("Se encontró una álgebra de Boole válida:\n");
+        printf("Matriz cruz:\n");
+        imprimirMatriz(matrizCruz);
+        printf("Matriz estrella:\n");
+        imprimirMatriz(matrizEstrella);
+    } else {
+        printf("No es posible construir un álgebra de Boole con 6 elementos.\n");
+    }
 
-    return 0;
+    return 0; // Finaliza el programa
 }
+
